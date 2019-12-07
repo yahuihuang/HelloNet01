@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,38 +12,29 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HelloNet01" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjH-ly-fqx">
-                                <rect key="frame" x="30" y="82" width="80" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="0eW-Xk-uTS"/>
-                                </constraints>
-                                <state key="normal" title="Click"/>
-                                <connections>
-                                    <action selector="netstatusAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UcF-4M-DfG"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eix-vF-fTj">
-                                <rect key="frame" x="20" y="111" width="414" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7m-ZX-sV7">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yjH-ly-fqx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="38" id="LNt-yp-2Vw"/>
-                            <constraint firstItem="Eix-vF-fTj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wyo-He-EjI"/>
-                            <constraint firstItem="Eix-vF-fTj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="20" id="bfo-bx-G98"/>
-                            <constraint firstItem="Eix-vF-fTj" firstAttribute="firstBaseline" secondItem="yjH-ly-fqx" secondAttribute="baseline" constant="24.5" symbolType="layoutAnchor" id="hTK-yZ-RWg"/>
-                            <constraint firstItem="yjH-ly-fqx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="toZ-Lu-1fc"/>
+                            <constraint firstItem="W7m-ZX-sV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="2hW-Bs-dgo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7m-ZX-sV7" secondAttribute="bottom" id="Mi9-tf-HJw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W7m-ZX-sV7" secondAttribute="trailing" id="iMt-Nj-2Ja"/>
+                            <constraint firstItem="W7m-ZX-sV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m7c-FN-lPz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="statusLabel" destination="Eix-vF-fTj" id="6qC-lh-8pR"/>
+                        <outlet property="wkWebview" destination="W7m-ZX-sV7" id="dkq-Py-5v6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
