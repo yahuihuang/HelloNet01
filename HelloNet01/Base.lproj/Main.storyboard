@@ -23,17 +23,61 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRb-t6-VkX">
+                                <rect key="frame" x="0.0" y="0.0" width="255" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dqd-Yg-l80"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="goPageEnter:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="jhQ-E2-bbS"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vnX-d1-60H">
+                                <rect key="frame" x="315" y="0.0" width="60" height="44"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="k67-Sx-qmb"/>
+                                </constraints>
+                                <state key="normal" title="前一頁"/>
+                                <connections>
+                                    <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4UU-Cm-2ZB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zpl-3d-h9N">
+                                <rect key="frame" x="255" y="0.0" width="60" height="44"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Sq0-0h-QR5"/>
+                                    <constraint firstAttribute="width" constant="60" id="UM4-e9-eji"/>
+                                </constraints>
+                                <state key="normal" title="GO"/>
+                                <connections>
+                                    <action selector="goInputUrl:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gbQ-DH-WaQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="W7m-ZX-sV7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="2hW-Bs-dgo"/>
+                            <constraint firstItem="W7m-ZX-sV7" firstAttribute="top" secondItem="Zpl-3d-h9N" secondAttribute="bottom" id="HBA-dl-X8r"/>
+                            <constraint firstItem="vnX-d1-60H" firstAttribute="leading" secondItem="Zpl-3d-h9N" secondAttribute="trailing" id="HYs-eK-ZU7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7m-ZX-sV7" secondAttribute="bottom" id="Mi9-tf-HJw"/>
+                            <constraint firstItem="W7m-ZX-sV7" firstAttribute="top" secondItem="vnX-d1-60H" secondAttribute="bottom" id="O2X-Fj-0fV"/>
+                            <constraint firstItem="Zpl-3d-h9N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="P4Y-yr-Q5X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vnX-d1-60H" secondAttribute="trailing" id="SL7-xT-MfF"/>
+                            <constraint firstItem="vnX-d1-60H" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="V9B-T0-1qu"/>
+                            <constraint firstItem="yRb-t6-VkX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hy1-BC-OVM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W7m-ZX-sV7" secondAttribute="trailing" id="iMt-Nj-2Ja"/>
                             <constraint firstItem="W7m-ZX-sV7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="m7c-FN-lPz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yRb-t6-VkX" secondAttribute="trailing" constant="120" id="uYz-5f-K6s"/>
+                            <constraint firstItem="yRb-t6-VkX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yBI-sK-Pa2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="urlAddress" destination="yRb-t6-VkX" id="316-jy-JN7"/>
                         <outlet property="wkWebview" destination="W7m-ZX-sV7" id="dkq-Py-5v6"/>
                     </connections>
                 </viewController>
